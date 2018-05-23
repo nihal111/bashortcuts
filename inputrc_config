@@ -7,14 +7,14 @@ $include /etc/inputrc
 
 
 ### History search
-# Mappings to have CTRL + UP and CTRL + DN arrow search through history
+# Mappings to have [CTRL] + [UP] and [CTRL] + [DN] search through history
 # for the string of characters between the start of the current line 
 # and the current cursor position. 
 # The search string must match at the beginning of a history line (startswith)
 "\e[1;5A": history-search-backward
 "\e[1;5B": history-search-forward
 
-# Mappings to have SHIFT + UP and SHIFT + DN arrow search through history
+# Mappings to have [SHIFT] + [UP] and [SHIFT] + [DN] search through history
 # for the string of characters between the start of the current line 
 # and the current cursor position.
 # The search string may match anywhere in a history line (contains)
@@ -23,20 +23,28 @@ $include /etc/inputrc
 #########################################
 
 ### Auto-complete
-# First [Tab] gives listing. 
-# Subsequent [Tab] and [Shift]+[Tab] cycle through all the possible completions.
+# First [TAB] gives listing. 
+# Subsequent [TAB] and [SHIFT]+[TAB] cycle through all the possible completions.
 "\t": menu-complete
 "\e[Z": menu-complete-backward
 set show-all-if-ambiguous On
 set menu-complete-display-prefix on
 
-# [Tab] for plain listing (default)
+# [TAB] for plain listing (default)
 # "\t": complete
 
-# [Tab] and [Shift]+[Tab] cycle through all the possible completions. No listing.
+# [TAB] and [SHIFT]+[TAB] cycle through all the possible completions. No listing.
 # "\t": menu-complete
 # "\e[Z": menu-complete-backward
 # set show-all-if-ambiguous Off
+
+#########################################
+
+### Deletion
+# Sets [ALT]+[BACKSPACE] to delete word before cursor
+"\e\C-h": backward-kill-word
+# Sets [ALT]+[DEL] to delete word after cursor. (Alt+D by default)
+"\e[3;3~": kill-word
 
 
 #########################################
