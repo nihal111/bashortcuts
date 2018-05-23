@@ -1,0 +1,4 @@
+
+if [ -f ~/.bash_bindings ]; then
+    . ~/.bash_bindings
+fi

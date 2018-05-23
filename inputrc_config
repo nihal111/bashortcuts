@@ -1,0 +1,66 @@
+# This is a customized configuration of GNU Readline, the input related 
+# library used by bash and most other shells. It is the startup file that 
+# deals with the mapping of the keyboard for certain situations.
+
+# Include definitions from /etc/inputrc
+$include /etc/inputrc
+
+
+### History search
+# Mappings to have CTRL + UP and CTRL + DN arrow search through history
+# for the string of characters between the start of the current line 
+# and the current cursor position. 
+# The search string must match at the beginning of a history line (startswith)
+"\e[1;5A": history-search-backward
+"\e[1;5B": history-search-forward
+
+# Mappings to have SHIFT + UP and SHIFT + DN arrow search through history
+# for the string of characters between the start of the current line 
+# and the current cursor position.
+# The search string may match anywhere in a history line (contains)
+"\e[1;2A": history-substring-search-backward
+"\e[1;2B": history-substring-search-forward
+#########################################
+
+### Auto-complete
+# First [Tab] gives listing. 
+# Subsequent [Tab] and [Shift]+[Tab] cycle through all the possible completions.
+"\t": menu-complete
+"\e[Z": menu-complete-backward
+set show-all-if-ambiguous On
+set menu-complete-display-prefix on
+
+# [Tab] for plain listing (default)
+# "\t": complete
+
+# [Tab] and [Shift]+[Tab] cycle through all the possible completions. No listing.
+# "\t": menu-complete
+# "\e[Z": menu-complete-backward
+# set show-all-if-ambiguous Off
+
+
+#########################################
+
+# sets readline to display possible completions using different 
+# colors to indicate their file types
+set colored-stats On
+# sets auto completion to ignore cases
+set completion-ignore-case On
+
+# sets 3 to be the maximum number of characters to be the common prefix 
+# to display for completions. If the common prefix has more than 3 characters, 
+# they are replaced by ellipsis. 
+set completion-prefix-display-length 3
+
+# sets the completions to be listed immediately instead of ringing the bell, 
+# when the completing word has more than one possible completion.
+# set show-all-if-ambiguous Off
+
+# sets the completions to be listed immediately instead of ringing the bell, 
+# when the completing word has more than one possible completion but no 
+# partial completion can be made.
+set show-all-if-unmodified On
+
+# sets completions to be appended by characters that indicate 
+# their file types reported by the `stat` system call.
+set visible-stats On

@@ -1,0 +1,21 @@
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+NO_COLOR='\033[0m'
+
+view_history() {
+	CURRENT_LINE=$READLINE_LINE
+	RESULTS=""
+	LINE_NO_LEAD_SPACE="$(echo -e "${CURRENT_LINE}" | sed -e 's/^[[:space:]]*//')"
+	if [ ! -z "$LINE_NO_LEAD_SPACE" ]; then
+		echo -e "${BLUE}Searching history for $LINE_NO_LEAD_SPACE${NO_COLOR}"
+		RESULTS=`history | grep "$LINE_NO_LEAD_SPACE"`
+	fi
+
+	if [ ! -z "$RESULTS" ]; then
+		echo "$RESULTS"
+	else
+		echo -e "${RED}No results found${NO_COLOR}"
+	fi
+}
+
+bind -x '"\C-h": view_history'
