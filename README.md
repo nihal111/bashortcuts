@@ -6,6 +6,15 @@ Turn on bash shortcuts using key-bindings and macros to supercharge your bash pr
 
 For starters, each key press is handled by a binding in bash. These bindings can be viewed using `bind -P`. So when you press the `UP` arrow to go to the previous command you executed, it is translated into a character sequence of "[A" and is handled by the binding `"\e[A": previous-history"`. This binding maps the key-sequence `\e[A` with the readline function `previous-history`. bashortcuts leverages these readline functions in addition to custom defined functions, and allows mapping them to key combinations easily.
 
+### Current Features
+1. Search through your history by partially typing a command. Hit `CTRL` + `UP` and `CTRL` + `DN` to cycle through auto-complete options from history.
+2. Auto-complete when ambiguous: 
+	- First `TAB` press yields the list of ambiguous matched (default behavior).
+	- Subsequent [TAB] and [SHIFT]+[TAB] presses cycle through all the possible completions.
+3. Deletion
+	- [ALT]+[BACKSPACE] to delete word before cursor
+	- [ALT]+[DEL] to delete word after cursor.
+
 ### How to use:
 1. Clone the repository: `git clone https://github.com/nihal111/bashortcuts/`
 2. Run the setup script.
