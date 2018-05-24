@@ -8,13 +8,13 @@ For starters, each key press is handled by a binding in bash. These bindings can
 
 ### Current Features
 #### Readline Functions
-1. Search through your history by partially typing a command. Hit `CTRL` + `UP` and `CTRL` + `DN` to cycle through auto-complete options from history.
+1. Search through your history by partially typing a command. Hit `CTRL`+`UP` and `CTRL`+`DN` to cycle through auto-complete options from history.
 2. Auto-complete when ambiguous: 
 	- First `TAB` press yields the list of ambiguous matched (default behavior).
-	- Subsequent [TAB] and [SHIFT]+[TAB] presses cycle through all the possible completions.
+	- Subsequent `TAB` and `SHIFT`+`TAB` presses cycle through all the possible completions.
 3. Deletion
-	- [ALT]+[BACKSPACE] to delete word before cursor
-	- [ALT]+[DEL] to delete word after cursor.
+	- `ALT`+`BACKSPACE` to delete word before cursor
+	- `ALT`+`DEL` to delete word after cursor.
 
 #### Custom Functions
 1. List history usage. Use `CTRL` + `H` while typing a command to view all past usages from history.
