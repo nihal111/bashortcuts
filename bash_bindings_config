@@ -18,4 +18,33 @@ view_history() {
 	fi
 }
 
+git_add() {
+	READLINE_LINE="git add "
+	READLINE_POINT=8
+}
+
+line_replacer() {
+	LINE="$1"
+	LEN=${#LINE}
+	READLINE_LINE="$LINE"
+	READLINE_POINT=$LEN
+}
+
+tester() {
+	echo works
+}
+
+## Binds CTRL + H to show all occurences in history for entered line
 bind -x '"\C-h": view_history'
+
+## Git Shortcuts
+### CTRL + G + A to `git add `
+bind -x '"\C-g\C-a": line_replacer "git add "'
+### CTRL + G + C to `git commit `
+bind -x '"\C-g\C-c": line_replacer "git commit "'
+### CTRL + G + O to `git checkout `
+bind -x '"\C-g\C-o": line_replacer "git checkout "'
+### CTRL + G + B to `git branch `
+bind -x '"\C-g\C-b": line_replacer "git branch "'
+### CTRL + G + P + O to `git push origin `
+bind -x '"\C-g\C-p\C-o": line_replacer "git push origin "'

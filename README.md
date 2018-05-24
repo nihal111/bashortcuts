@@ -8,16 +8,38 @@ For starters, each key press is handled by a binding in bash. These bindings can
 
 ### Current Features
 #### Readline Functions
-1. Search through your history by partially typing a command. Hit `CTRL`+`UP` and `CTRL`+`DN` to cycle through auto-complete options from history.
-2. Auto-complete when ambiguous: 
+1. Search through your history by partially typing a command. Hit `CTRL`+`UP` and `CTRL`+`DN` to cycle through auto-complete options from history. (startswith)
+
+![ctrl+up_dn](gifs/ctrl+up_dn.gif "ctrl+up_dn")
+
+2. Hit `SHIFT`+`UP` and `SHIFT`+`DN` to cycle through all usages of a phrase from history. (contains)
+
+![shift+up_dn](gifs/shift+up_dn.gif "shift+up_dn")
+
+3. Auto-complete when ambiguous: 
 	- First `TAB` press yields the list of ambiguous matched (default behavior).
 	- Subsequent `TAB` and `SHIFT`+`TAB` presses cycle through all the possible completions.
-3. Deletion
+
+![tabbing](gifs/tabbing.gif "tabbing")
+
+4. Deletion
 	- `ALT`+`BACKSPACE` to delete word before cursor
 	- `ALT`+`DEL` to delete word after cursor.
 
+![deletion](gifs/deletion.gif "deletion")
+
 #### Custom Functions
-1. List history usage. Use `CTRL` + `H` while typing a command to view all past usages from history.
+1. List history usage. Use `CTRL` + `H` while typing a command to view all past usages from history.d
+
+![search_history](gifs/search_history.gif "search_history")
+
+2. Git shortcuts with key bindings.
+	- `CTRL` + `G` + `A` to get `git add `
+	- `CTRL` + `G` + `O` to get `git checkout `
+	- `CTRL` + `G` + `B` to get `git branch `
+	- `CTRL` + `G` + `P` + `O` to get `git push origin `
+
+![git_shorthands](gifs/git_shorthands.gif "git_shorthands")
 
 ### How to use:
 1. Clone the repository: `git clone https://github.com/nihal111/bashortcuts/`
